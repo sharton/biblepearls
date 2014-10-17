@@ -1,9 +1,7 @@
 <template name="entry">
-  <div class="row">
-    <div class="span12">
-      <h4>{{authorMessage}}</h4>
-      <h4>{{userMessage}}</h4>
-      <a href="{{pathFor 'entryDetails'}}" class="discuss bnt">Открыть</a>
-    </div>
-  </div>
+  <li class="list-group-item">
+    <h4>{{authorMessage}}</h4>
+    <h4>{{userMessage}}</h4>
+    <a href="{{pathFor 'entryDetails'}}" class="discuss bnt">Открыть</a>
+  </li>
 </template>
