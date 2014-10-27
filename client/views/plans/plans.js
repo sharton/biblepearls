@@ -1,0 +1,3 @@
+Template.plans.rendered = function() {
+  
+};

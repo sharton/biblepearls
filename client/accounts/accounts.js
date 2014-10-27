@@ -1,31 +1,19 @@
-if (Meteor.isClient) {
-	Template.login.creatingAccount = function() {
-		return Session.get("creatingAccount");
-	};
+Meteor.startup(function() {
+  Accounts.ui.config({
+    passwordSignupFields: 'EMAIL_ONLY'
+  });
 
-	Template.login.events({
-		'click #loginform': function() {
-			Session.set('creatingAccount', false);
-		},
-		'click #accountform': function() {
-			Session.set('creatingAccount', true);
-		},
-		'click #createaccount': function(e, t) {
-			Session.set('creatingAccount', false);
-			Accounts.createUser({
-				username: t.find('#username').value,
-				password: t.find('#password').value,
-				email: t.find('#email').value,
-				profile: {
-					name: t.find('#name').value
-				}
-			})
-		},
-		'click #logout': function() {
-			Meteor.logout();
-		},
-		'click #login': function(e, t) {
-			Meteor.loginWithPassword(t.find('#username').value, t.find('#password').value);
-		}
-	});
-}
+  AccountsEntry.config({
+    homeRoute: '/',
+    dashboardRoute: '/dashboard',
+    profileRoute: '/profile',
+    language: 'en',
+    showSignupCode: false,
+    extraSignUpFields: [{
+      field: "name",
+      label: "Your Name",
+      type: "text",
+      required: true
+    }]
+  });
+});
