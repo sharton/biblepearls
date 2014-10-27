@@ -14,10 +14,19 @@ Meteor.publishComposite("items", function() {
   }
 });
 
+/* Планы чтения */
 Meteor.publishComposite("plans", function() {
   return {
     find: function() {
       return Plans.find({});
+    }
+  }
+});
+
+Meteor.publishComposite("users_plans", function() {
+  return {
+    find: function() {
+      return UsersPlans.find({});
     }
   }
 });
