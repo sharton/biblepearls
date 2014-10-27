@@ -1,7 +1,7 @@
 Meteor.startup(function() {
   if(Meteor.isClient) {
     SEO.config({
-      title: 'BiblePearls beta',
+      title: 'BiblePearls',
       meta: {
         'description': 'A project by Dev4Christ'
       },
