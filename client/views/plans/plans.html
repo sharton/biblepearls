@@ -5,20 +5,42 @@
     </div>
     <div class="row">
       {{#each items}}
-        {{>plan}}
+        <div class="col-md-4">
+          <h4>{{name}}</h4>
+          <div>
+            <a href="{{pathFor 'planDetails'}}">
+              <button class="btn btn-md btn-success">Подробнее</button>
+            </a>
+          </div>
+        </div>
       {{/each}}
     </div>
   </div>
 </template>
 
-<template name="plan">
-  <div class="col-md-4">
-    <h4>{{name}}</h4>
-    {{desc}}
-    <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#planDetailsModal">Подробнее</button>
-    <button class="btn btn-success btn-lg" id="btn-plan-add">Добавить</button>
+<template name="myPlans">
+  <div class="plans">
+    <div class="page-header">
+      <h1>Мои планы</h1>
+    </div>
+    <div class="row">
+      {{#each items}}
+        <div class="col-md-4">
+          <h4>{{name}}</h4>
+          <div>
+            <a href="{{pathFor 'planDetails'}}">
+              <button class="btn btn-md btn-success">Подробнее</button>
+            </a>
+          </div>
+        </div>
+      {{/each}}
+    </div>
   </div>
+</template>
 
+<!--
+<template name="plan">
+  </div>
   <div class="modal fade" id="planDetailsModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -36,9 +58,13 @@
       </div>
     </div>
   </div>
-
 </template>
+-->
 
 <template name="planDetails">
-
+  <div>
+    <h3>{{name}}</h3>
+    <h4>{{desc}}</h4>
+    <button class="btn btn-md btn-success" id="btn-plan-add">Добавить</button>
+  </div>
 </template>
