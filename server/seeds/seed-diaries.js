@@ -1,6 +1,6 @@
 Meteor.startup(function() {
 
-  var plan1 = {
+  var diary1 = {
     name: "Жемчужины тихого времени 1",
     desc: "План для прочтения Библии за год.",
     days: [
@@ -10,7 +10,7 @@ Meteor.startup(function() {
     ]
   };
 
-  var plan2 = {
+  var diary2 = {
     name: "Жемчужины тихого времени 2",
     desc: "План для прочтения Библии за полгода.",
     days: [
@@ -20,7 +20,7 @@ Meteor.startup(function() {
     ]
   };
 
-  var plan3 = {
+  var diary3 = {
     name: "Жемчужины тихого времени 3",
     desc: "План для прочтения Библии за 3 месяца.",
     days: [
@@ -30,11 +30,11 @@ Meteor.startup(function() {
     ]
   };
 
-  /* Seeding diary plans */
-  if (Plans.find({}).count() === 0) {
-    Plans.insert(plan1);
-    Plans.insert(plan2);
-    Plans.insert(plan3);
+  /* Seeding diaries */
+  if (Diaries.find({}).count() === 0) {
+    Diaries.insert(diary1);
+    Diaries.insert(diary2);
+    Diaries.insert(diary3);
   }
 
 });

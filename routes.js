@@ -15,67 +15,36 @@ Router.map(function() {
     },
     onAfterAction: function() {
       SEO.set({
-        title: 'Dashboard | ' + SEO.settings.title
+        title: 'Доска | ' + SEO.settings.title
       });
     }
   });
 
-  /* Планы чтения */
-  this.route('plans', {
-    path: '/plans',
+  /* Дневники */
+  this.route('diaries', {
+    path: '/diaries',
     loginRequired: 'entrySignIn',
     waitOn: function() {
-      return this.subscribe("plans");
+      return this.subscribe("diaries");
     },
     data: {
-      items: Plans.find({})
+      items: Diaries.find({})
     },
     onAfterAction: function() {
       SEO.set({
-        title: 'Планы чтения | ' + SEO.settings.title
+        title: 'Дневники | ' + SEO.settings.title
       });
     }
   });
 
-  this.route('planDetails', {
-    path: '/plans/:_id',
+  this.route('diaryDetails', {
+    path: '/diaries/:_id',
     loginRequired: 'entrySignIn',
     waitOn: function() {
-      return this.subscribe("plans");
+      return this.subscribe("diaries");
     },
     data: function() {
-      return Plans.findOne(this.params._id);
-    }
-  });
-
-  this.route('myPlans', {
-    path: '/myplans',
-    loginRequired: 'entrySignIn',
-    waitOn: function() {
-      return this.subscribe("plans");
-    },
-    data: {
-      items: function() {
-          return Plans.find({});
-      }
-    },
-    onAfterAction: function() {
-      SEO.set({
-        title: 'Мои планы чтения | ' + SEO.settings.title
-      });
-    }
-  });
-
-  this.route('myPlanDetails', {
-    path: '/myplans/:_id',
-    loginRequired: 'entrySignIn',
-    waitOn: function() {
-      this.subscribe("users_plans");
-      return this.subscribe("plans");
-    },
-    data: function() {
-      //return Plans.findOne(this.params._id);
-      // finish
+      return Diaries.findOne(this.params._id);
     }
   });
 

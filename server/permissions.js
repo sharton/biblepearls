@@ -10,7 +10,7 @@ Items.allow({
   }
 });
 
-Plans.allow({
+Diaries.allow({
   'insert': function(userId, doc) {
     return userId;
   },
@@ -22,7 +22,7 @@ Plans.allow({
   }
 });
 
-UsersPlans.allow({
+UserDiaries.allow({
   'insert': function(userId, doc) {
     return userId;
   },

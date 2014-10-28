@@ -1,0 +1,41 @@
+<template name="diaries">
+  <div class="diaries">
+    <div class="page-header">
+      <h1>Дневники</h1>
+    </div>
+
+    <ul class="nav nav-pills" role="tablist">
+      <li class="active"><a href="#all" role="tab" data-toggle="tab">Все дневники</a></li>
+      <li><a href="#my" role="tab" data-toggle="tab">Мои дневники</a></li>
+    </ul>
+
+    <div class="tab-content">
+      <div class="tab-pane active" id="all">
+        <div class="row">
+          {{#each items}}
+            <div class="col-md-4">
+              <h4>{{name}}</h4>
+              <div>
+                <a href="{{pathFor 'diaryDetails'}}">
+                  <button class="btn btn-md btn-success">Подробнее</button>
+                </a>
+              </div>
+            </div>
+          {{/each}}
+        </div>
+      </div>
+      <div class="tab-pane" id="my">
+        Мои
+      </div>
+    </div>
+  </div>
+
+</template>
+
+<template name="diaryDetails">
+  <div>
+    <h3>{{name}}</h3>
+    <h4>{{desc}}</h4>
+    <button class="btn btn-md btn-success" id="btn-diary-add">Добавить</button>
+  </div>
+</template>

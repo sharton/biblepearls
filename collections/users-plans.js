@@ -1,9 +1,9 @@
-UsersPlans = new Mongo.Collection('users_plans');
+UserDiaries = new Mongo.Collection('user_diaries');
 
-UsersPlans.helpers({
+UserDiaries.helpers({
 
 });
 
-UsersPlans.before.insert(function (userId, doc) {
+UserDiaries.before.insert(function (userId, doc) {
   doc.createdAt = moment().toDate();
 });

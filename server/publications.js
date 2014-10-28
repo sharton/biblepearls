@@ -15,19 +15,19 @@ Meteor.publishComposite("items", function() {
 });
 
 /* Планы чтения */
-Meteor.publishComposite("plans", function() {
+Meteor.publishComposite("diaries", function() {
   return {
     find: function() {
-      return Plans.find({});
+      return Diaries.find({});
     }
   }
 });
 
-Meteor.publishComposite("users_plans", function() {
+Meteor.publishComposite("user_diaries", function() {
   return {
     find: function() {
-      return Plans.find({});
-    },
+      return Diaries.find({});
+    }/*,
     children: [
       {
         find: function(plan) {
@@ -36,7 +36,7 @@ Meteor.publishComposite("users_plans", function() {
           );
         }
       }
-    ]
+    ]*/
   }
 });
 
