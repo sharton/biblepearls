@@ -3,18 +3,9 @@ Meteor.publishComposite("items", function() {
     find: function() {
       return Items.find({});
     }
-    // ,
-    // children: [
-    //   {
-    //     find: function(item) {
-    //       return [];
-    //     }
-    //   }
-    // ]
   }
 });
 
-/* Планы чтения */
 Meteor.publishComposite("diaries", function() {
   return {
     find: function() {
@@ -26,8 +17,16 @@ Meteor.publishComposite("diaries", function() {
 Meteor.publishComposite("user_diaries", function() {
   return {
     find: function() {
+      return UserDiaries.find({user_id: this.userId});
+    }
+  }
+});
+
+/*Meteor.publishComposite("user_diaries", function() {
+  return {
+    find: function() {
       return Diaries.find({});
-    }/*,
+    },
     children: [
       {
         find: function(plan) {
@@ -36,9 +35,9 @@ Meteor.publishComposite("user_diaries", function() {
           );
         }
       }
-    ]*/
+    ]
   }
-});
+});*/
 
 /*Meteor.publish('users_plans': function(userId) {
   var usersPlansCursor = UsersPlans.find({user_id: userId});

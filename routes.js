@@ -20,15 +20,16 @@ Router.map(function() {
     }
   });
 
-  /* Дневники */
   this.route('diaries', {
     path: '/diaries',
     loginRequired: 'entrySignIn',
     waitOn: function() {
-      return this.subscribe("diaries");
+      this.subscribe("diaries");
+      this.subscribe("user_diaries");
     },
     data: {
-      items: Diaries.find({})
+      systemDiaries: Diaries.find({}),
+      userDiaries: UserDiaries.find({})
     },
     onAfterAction: function() {
       SEO.set({
