@@ -1,12 +1,29 @@
 <template name="profile">
   <div class="profile">
-    <h2>Edit Profile</h2>
-    <form>
-      {{#each profileFields}}
-        {{> _profileField}}
-      {{/each}}
-      {{submit_button 'Update Profile'}}
-    </form>
+    <h2>Профиль</h2>
+
+    <ul class="nav nav-tabs" role="tablist">
+      <li class="active"><a href="#personal" role="tab" data-toggle="tab">Личные данные</a></li>
+      <li><a href="#translations" role="tab" data-toggle="tab">Переводы</a></li>
+      <li><a href="#interface" role="tab" data-toggle="tab">Интерфейс</a></li>
+    </ul>
+
+    <div class="tab-content">
+      <div class="tab-pane active" id="personal">
+        <form>
+          {{#each profileFields}}
+            {{> _profileField}}
+          {{/each}}
+          {{submit_button 'Сохранить'}}
+        </form>
+      </div>
+      <div class="tab-pane" id="translations">
+        {{>translations}}
+      </div>
+      <div class="tab-pane" id="interface">
+        {{>interface}}
+      </div>
+    </div>
   </div>
 </template>
 
@@ -40,4 +57,12 @@
       {{> file_field object=profile field=name}}
     </div>
   {{/if}}
+</template>
+
+<template name="translations">
+  <h4>Доступные переводы</h4>
+</template>
+
+<template name="interface">
+  <h4>Интерфейс</h4>
 </template>
