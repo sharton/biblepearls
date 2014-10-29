@@ -10,19 +10,23 @@ Template.userDiaryBox.helpers({
   }
 });
 
-Template.userDiaryBox.helpers({
+Template.userDiaryBox.events({
   'click #btn-diary-delete' : function() {
-    
-    //db.products.remove( { qty: { $gt: 20 } } )
+    //e.preventDefault();
+    if (confirm("Удалить дневник?")) {
+      var currentDiaryId = this._id;
+      UserDiaries.remove(currentPostId);
+      Router.go('diaries');
+    }
   }
 });
 
-Template.diaryDetails.events({
+Template.systemDiaryDetails.events({
   'click #btn-diary-add' : function() {
     UserDiaries.insert({
       user_id: Meteor.userId(),
       diary_id: this._id
     });
-    alert('added!');
+    Router.go('diaries');
   }
 });
