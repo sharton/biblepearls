@@ -1,0 +1,20 @@
+<template name="userDiaryBox">
+  <div class="col-md-4">
+    {{#with joinWithDiaries}}
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <span class="fa fa-book fa-5x pull-left fa-border"></span>
+          <h4><strong>{{name}}</strong></h4>
+          <div>
+            {{desc}}
+          </div>
+        </div>
+        <div align="center" class="panel-footer">
+          <button class="btn btn-sm btn-success">Просмотреть</button>
+          <button class="btn btn-sm btn-warning">Очистить</button>
+          <button class="btn btn-sm btn-danger" id="btn-diary-delete">Удалить</button>
+        </div>
+      </div>
+    {{/with}}
+  </div>
+</template>

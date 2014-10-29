@@ -38,7 +38,7 @@ Router.map(function() {
     }
   });
 
-  this.route('diaryDetails', {
+  this.route('systemDiaryDetails', {
     path: '/diaries/:_id',
     loginRequired: 'entrySignIn',
     waitOn: function() {

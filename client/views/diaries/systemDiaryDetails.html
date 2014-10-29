@@ -1,0 +1,28 @@
+<template name="systemDiaryDetails">
+  <div class="panel panel-default">
+    <div class="panel-heading"><strong><h4>{{name}}</h4></strong></div>
+    <div class="panel-body">
+      <span class="fa fa-book fa-5x pull-left"></span>
+      <span>{{desc}}</span>
+    </div>
+    <ul class="list-group">
+      <li class="list-group-item">
+        <div>Количество дней <span class="badge">365</span></div>
+      </li>
+      <li class="list-group-item">
+        <div>
+          Книги Библии
+          <span class="badge">Левит</span>
+          <span class="badge">Исход</span>
+          <span class="badge">Бытие</span>
+        </div>
+      </li>
+      <li class="list-group-item">
+        <div>Среднее количество стихов <span class="badge">10</span></div>
+      </li>
+    </ul>
+    <div align="center" class="panel-footer">
+      <button class="btn btn-md btn-success" id="btn-diary-add">Добавить</button>
+    </div>
+  </div>
+</template>

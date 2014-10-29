@@ -1,0 +1,18 @@
+<template name="systemDiaryBox">
+  <div class="col-md-4">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <span class="fa fa-book fa-5x pull-left fa-border"></span>
+        <h4><strong>{{name}}</strong></h4>
+        <div>
+          {{desc}}
+        </div>
+      </div>
+      <div align="center" class="panel-footer">
+        <a href="{{pathFor 'systemDiaryDetails'}}">
+          <button class="btn btn-sm btn-primary">Подробнее</button>
+        </a>
+      </div>
+    </div>
+  </div>
+</template>

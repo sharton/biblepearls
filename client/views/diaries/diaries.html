@@ -3,27 +3,24 @@
     <!--<div class="page-header">
       <h1>Дневники</h1>
     </div>-->
-
-    <ul class="nav nav-pills" role="tablist">
-      <li class="active"><a href="#all" role="tab" data-toggle="tab">Все дневники</a></li>
-      <li><a href="#user" role="tab" data-toggle="tab">Мои дневники</a></li>
-    </ul>
+    <p>
+      <ul class="nav nav-pills" role="tablist">
+        <li class="active"><a href="#all" role="tab" data-toggle="tab">Все дневники</a></li>
+        <li><a href="#user" role="tab" data-toggle="tab">Мои дневники</a></li>
+      </ul>
+    </p>
 
     <div class="tab-content">
       <div class="tab-pane active" id="all">
         <div class="row">
           {{#each systemDiaries}}
-            {{>diaryBox}}
+            {{>systemDiaryBox}}
           {{/each}}
         </div>
       </div>
       <div class="tab-pane" id="user">
         {{#each userDiaries}}
-          <div class="col-md-4">
-            {{#with joinWithDiaries}}
-              <h4>{{name}}</h4>
-            {{/with}}
-          </div>
+          {{>userDiaryBox}}
         {{else}}
           <h4>Нет дневников!</h4>
         {{/each}}
