@@ -10,10 +10,17 @@ Meteor.startup(function() {
     language: 'ru',
     showSignupCode: false,
     extraSignUpFields: [{
-      field: "name",
-      label: "Your Name",
+      field: "firstName",
+      label: "Имя",
       type: "text",
       required: true
-    }]
+    },
+    {
+      field: "lastName",
+      label: "Фамилия",
+      type: "text",
+      required: true
+    }
+    ]
   });
 });

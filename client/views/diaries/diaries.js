@@ -12,13 +12,23 @@ Template.userDiaryBox.helpers({
 Template.systemDiaryDetails.events({
   'click #btn-diary-add' : function(event, template) {
     event.preventDefault();
-    alert(this._id);
     var userDiaryName = template.find("#userDiaryName").value;
-    UserDiaries.insert({
-      user_id: Meteor.userId(),
-      diary_id: this._id,
-      user_diary_name: userDiaryName
-    });
-    Router.go('diaries');
+    if (userDiaryName.length > 0) {
+      UserDiaries.insert({
+        user_id: Meteor.userId(),
+        diary_id: this._id,
+        user_diary_name: userDiaryName
+      });
+      toastr.options = {
+        "closeButton": true
+      }
+      toastr.success('Дневник успешно создан!', 'Ваш новый дневник');
+      Router.go('diaries');
+    } else {
+      toastr.options = {
+        "closeButton": true
+      }
+      toastr.error('Имя дневника не может быть пустым!', 'Имя дневника');
+    }
   }
 });

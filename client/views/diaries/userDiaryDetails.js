@@ -12,6 +12,7 @@ Template.userDiaryDetails.events({
     if (confirm("Удалить дневник?")) {
       var currentDiaryId = this._id;
       UserDiaries.remove(currentDiaryId);
+      toastr.success('Дневник удален!', 'Ваш дневник');
       Router.go('diaries');
     }
   }
