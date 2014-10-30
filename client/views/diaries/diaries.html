@@ -5,25 +5,24 @@
     </div>-->
     <p>
       <ul class="nav nav-pills" role="tablist">
-        <li class="active"><a href="#all" role="tab" data-toggle="tab">Все дневники</a></li>
-        <li><a href="#user" role="tab" data-toggle="tab">Мои дневники</a></li>
+        <li class="active"><a href="#user" role="tab" data-toggle="tab">Мои дневники</a></li>
+        <li><a href="#all" role="tab" data-toggle="tab">Все дневники</a></li>
       </ul>
     </p>
-
     <div class="tab-content">
-      <div class="tab-pane active" id="all">
-        <div class="row">
-          {{#each systemDiaries}}
-            {{>systemDiaryBox}}
-          {{/each}}
-        </div>
-      </div>
-      <div class="tab-pane" id="user">
+      <div class="tab-pane active" id="user">
         {{#each userDiaries}}
           {{>userDiaryBox}}
         {{else}}
           <h4>Нет дневников!</h4>
         {{/each}}
+      </div>
+      <div class="tab-pane" id="all">
+        <div class="row">
+          {{#each systemDiaries}}
+            {{>systemDiaryBox}}
+          {{/each}}
+        </div>
       </div>
     </div>
   </div>

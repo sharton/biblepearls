@@ -10,17 +10,6 @@ Template.userDiaryBox.helpers({
   }
 });
 
-Template.userDiaryBox.events({
-  'click #btn-diary-delete' : function() {
-    //e.preventDefault();
-    if (confirm("Удалить дневник?")) {
-      var currentDiaryId = this._id;
-      UserDiaries.remove(currentPostId);
-      Router.go('diaries');
-    }
-  }
-});
-
 Template.systemDiaryDetails.events({
   'click #btn-diary-add' : function() {
     UserDiaries.insert({

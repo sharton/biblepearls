@@ -49,6 +49,18 @@ Router.map(function() {
     }
   });
 
+  this.route('userDiaryDetails', {
+    path: '/diaries/user/:_id',
+    loginRequired: 'entrySignIn',
+    waitOn: function() {
+      this.subscribe("diaries");
+      this.subscribe("user_diaries");
+    },
+    data: function() {
+      return UserDiaries.findOne(this.params._id);
+    }
+  });
+
   this.route('profile', {
     path: '/profile',
     data: function() {

@@ -1,4 +1,8 @@
 <template name="systemDiaryDetails">
+  <ol class="breadcrumb">
+    <li><a href="{{pathFor 'diaries'}}">Дневники</a></li>
+    <li class="active">{{name}}</li>
+  </ol>
   <div class="panel panel-default">
     <div class="panel-heading"><strong><h4>{{name}}</h4></strong></div>
     <div class="panel-body">

@@ -3,16 +3,16 @@
     {{#with joinWithDiaries}}
       <div class="panel panel-default">
         <div class="panel-body">
-          <span class="fa fa-book fa-5x pull-left fa-border"></span>
+          <span class="fa fa-edit fa-5x pull-left fa-border"></span>
           <h4><strong>{{name}}</strong></h4>
           <div>
             {{desc}}
           </div>
         </div>
         <div align="center" class="panel-footer">
-          <button class="btn btn-sm btn-default">Просмотреть</button>
-          <button class="btn btn-sm btn-default">Очистить</button>
-          <button class="btn btn-sm btn-danger" id="btn-diary-delete">Удалить</button>
+          <a href="{{pathFor 'userDiaryDetails'}}">
+            <button class="btn btn-sm btn-default">Подробнее</button>
+          </a>
         </div>
       </div>
     {{/with}}
