@@ -2,28 +2,26 @@
   {{#with joinWithDiaries}}
     <ol class="breadcrumb">
       <li><a href="{{pathFor 'diaries'}}">Мои дневники</a></li>
-      <li class="active">{{name}}</li>
+      <li class="active">{{user_diary_name}}</li>
     </ol>
     <div class="panel panel-default">
-      <div class="panel-heading"><strong><h4>{{name}}</h4></strong></div>
+      <div class="panel-heading"><strong><h4>{{user_diary_name}}</h4></strong></div>
       <div class="panel-body">
         <span class="fa fa-edit fa-5x pull-left"></span>
+        <h4><strong>Тип:</strong> {{name}}</h4>
         <span>{{desc}}</span>
       </div>
       <ul class="list-group">
         <li class="list-group-item">
-          <div>Количество дней <span class="badge">365</span></div>
+          <h4>Статистика</h4>
         </li>
         <li class="list-group-item">
           <div>
-            Книги Библии
-            <span class="badge">Левит</span>
-            <span class="badge">Исход</span>
-            <span class="badge">Бытие</span>
+            Заполнено <span class="badge">20 дней</span>
           </div>
         </li>
         <li class="list-group-item">
-          <div>Среднее количество стихов <span class="badge">10</span></div>
+          <div>Потрачено <span class="badge">10 часов</span></div>
         </li>
       </ul>
       <div align="center" class="panel-footer">
