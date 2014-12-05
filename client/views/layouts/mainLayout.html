@@ -1,13 +1,113 @@
 <template name="mainLayout">
   <!--[if lt IE 9]>
-    <p class="browser-warning"><strong><i class="icon-exclamation-sign"></i> Warning</strong> - You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/" target="_blank">upgrade your browser</a> to properly view this website.</p>
+    <p class="browser-warning"><strong><i class="icon-exclamation-sign"></i> Warning</strong> - You are using an <strong>outdated</strong> browser. Please    <a href="http://browsehappy.com/" target="_blank">upgrade your browser</a> to properly view this website.</p>
   <![endif]-->
 
   {{> yield region="header"}}
 
-  <div class="container">
-    {{> yield}}
-  </div>
+    <div class="wrapper row-offcanvas row-offcanvas-left">
+      <!-- Left side column. contains the logo and sidebar -->
+      <aside class="left-side sidebar-offcanvas">
+        <!-- sidebar: style can be found in sidebar.less -->
+        <section class="sidebar">
+          <!-- Sidebar user panel -->
+          <div class="user-panel">
+            <div class="pull-left image">
+              <img src="img/avatar3.png" class="img-circle" alt="User Image" />
+            </div>
+            <div class="pull-left info">
+              <p>Hello, Jane</p>
 
-  {{> yield region="footer"}}
+              <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+            </div>
+          </div>
+          <!-- search form -->
+          <!--
+          <form action="#" method="get" class="sidebar-form">
+            <div class="input-group">
+              <input type="text" name="q" class="form-control" placeholder="Search..."/>
+              <span class="input-group-btn">
+                <button type='submit' name='seach' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>
+              </span>
+            </div>
+          </form>
+          -->
+          <!-- /.search form -->
+          <!-- sidebar menu: : style can be found in sidebar.less -->
+          <ul class="sidebar-menu">
+            <li class="treeview">
+              <a href="#">
+                <i class="fa fa-bar-chart-o"></i>
+                <span>Все дневники</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                <li><a href="/diaries"><i class="fa fa-angle-double-right"></i> Годовые</a></li>
+                <li><a href="#"><i class="fa fa-angle-double-right"></i> На месяц</a></li>
+                <li><a href="#"><i class="fa fa-angle-double-right"></i> Менее месяца</a></li>
+                <li><a href="#"><i class="fa fa-angle-double-right"></i> Тематические</a></li>
+              </ul>
+            </li>
+            <li class="treeview">
+              <a href="#">
+                <i class="fa fa-laptop"></i>
+                <span>Рабочие дневники</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                <li><a href="#"><i class="fa fa-angle-double-right"></i> По времени</a></li>
+                <li><a href="#"><i class="fa fa-angle-double-right"></i> По темам</a></li>
+              </ul>
+            </li>
+            <li class="treeview">
+              <a href="#">
+                <i class="fa fa-folder"></i>
+                <span>Мои дневники</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                <li><a href="#"><i class="fa fa-angle-double-right"></i> По времени</a></li>
+                <li><a href="#"><i class="fa fa-angle-double-right"></i> По темам</a></li>
+              </ul>
+            </li>
+            <li class="treeview">
+              <a href="#">
+                <i class="fa fa-table"></i> <span>Метки</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                <li><a href="#"><i class="fa fa-angle-double-right"></i> Все метки</a></li>
+                <li><a href="#"><i class="fa fa-angle-double-right"></i> Добавить метку</a></li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        <!-- /.sidebar -->
+      </aside>
+
+      <!-- Right side column. Contains the navbar and content of the page -->
+      <aside class="right-side">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+          <h1>
+            Blank page
+            <small>Control panel</small>
+          </h1>
+          <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li class="active">Blank page</li>
+          </ol>
+        </section>
+
+        <!-- Main content -->
+        <section class="content">
+          {{> yield}}
+        </section><!-- /.content -->
+
+      </aside><!-- /.right-side -->
+    </div><!-- ./wrapper -->
+
+    {{> yield region="footer"}}
+
+
 </template>
